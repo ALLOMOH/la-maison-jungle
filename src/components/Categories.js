@@ -1,33 +1,23 @@
-import { useState } from 'react'
-import '../styles/Footer.css'
+import '../styles/Categories.css'
 
-function Footer() {
-	const [inputValue, setInputValue] = useState('')
-
-	function handleInput(e) {
-		setInputValue(e.target.value)
-	}
-
-	function handleBlur() {
-		if (!inputValue.includes('@')) {
-			alert("Attention, il n'y a pas d'@, ceci n'est pas une adresse valide 😥")
-		}
-	}
-
+function Categories({ setActiveCategory, categories, activeCategory }) {
 	return (
-		<footer className='lmj-footer'>
-			<div className='lmj-footer-elem'>
-				Pour les passionné·e·s de plantes 🌿🌱🌵
-			</div>
-			<div className='lmj-footer-elem'>Laissez-nous votre mail :</div>
-			<input
-				placeholder='Entrez votre mail'
-				onChange={handleInput}
-				value={inputValue}
-				onBlur={handleBlur}
-			/>
-		</footer>
+		<div className='lmj-categories'>
+			<select
+				value={activeCategory}
+				onChange={(e) => setActiveCategory(e.target.value)}
+				className='lmj-categories-select'
+			>
+				<option value=''>---</option>
+				{categories.map((cat) => (
+					<option key={cat} value={cat}>
+						{cat}
+					</option>
+				))}
+			</select>
+			<button data-button-reinitialiser  onClick={() => setActiveCategory('')}>Réinitialiser</button>
+		</div>
 	)
 }
 
-export default Footer
+export default Categories

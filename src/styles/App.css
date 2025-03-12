@@ -1,0 +1,45 @@
+:root{
+    --background-color:white;
+    --primary-color:rgba(49, 255, 104, 0.746);
+    --color-text:rgb(0, 0, 0);
+}
+
+body.dark{
+    --background-color:rgb(0, 136, 30);
+    --primary-color:rgba(49, 255, 104, 0.746);
+    --color-text:rgb(255, 255, 255);
+}
+
+button[data-button-empty]{
+    color: var(--color-,white);
+    border: none;
+  
+}
+
+button{
+    padding: 7px 10px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: .56rem .4rem var(--primary-color);
+    transition: all ease-in .4s;
+}
+
+button:active {
+    --background-color:rgb(0, 136, 30);
+    --color-text:rgb(255, 255, 255);
+    background-color: var(--background-color);
+    color:var(--color-text);
+}
+
+
+
+input,select{
+    border:none;
+    border-bottom:1px black solid;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: .56rem .4rem var(--primary-color);
+}

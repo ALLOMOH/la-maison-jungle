@@ -10,12 +10,13 @@ function Cart({ cart, updateCart }) {
 	useEffect(() => {
 		document.title = `LMJ: ${total}€ d'achats`
 	}, [total])
-
 	return isOpen ? (
-		<div className='lmj-cart'>
+		<div className='lmj-cart lmj-show-cart'>
 			<button
 				className='lmj-cart-toggle-button'
-				onClick={() => setIsOpen(false)}
+				onClick={() => {
+          setIsOpen(false)
+        }}
 			>
 				Fermer
 			</button>
@@ -30,7 +31,7 @@ function Cart({ cart, updateCart }) {
 						))}
 					</ul>
 					<h3>Total :{total}€</h3>
-					<button onClick={() => updateCart([])}>Vider le panier</button>
+					<button data-button-empty onClick={() => updateCart([])}>Vider le panier</button>
 				</div>
 			) : (
 				<div>Votre panier est vide</div>
@@ -40,7 +41,9 @@ function Cart({ cart, updateCart }) {
 		<div className='lmj-cart-closed'>
 			<button
 				className='lmj-cart-toggle-button'
-				onClick={() => setIsOpen(true)}
+				onClick={() =>{
+          setIsOpen(true)
+        }}
 			>
 				Ouvrir le Panier
 			</button>

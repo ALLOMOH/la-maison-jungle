@@ -1,4 +1,4 @@
 .lmj-layout-inner {
-	display: flex;
-	flex-direction: row;
+    display: grid;
+    grid-template-columns:minmax(100px,.6fr) 2fr;
 }
