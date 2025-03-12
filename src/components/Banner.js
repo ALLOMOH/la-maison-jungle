@@ -1,14 +1,7 @@
-import React from 'react';
-import './../styles/Banner.css';
-import Logo from '../assets/logo.png';
+import '../styles/Banner.css'
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default function Banner () {
-  const TTITLE = "La maison de la jungle"
-  return (
-    <div className='lmj-banner'>
-        <img src={Logo} alt='La maison jungle' className='imj-logo'/>
-        <h1>{TTITLE}</h1>
-    </div>
-  );
+function Banner({ children }) {
+	return <div className='lmj-banner'>{children}</div>
 }
+
+export default Banner
